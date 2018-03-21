@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      /*A function named printName which returns the name 
+        by using the properties of user object
+      */
+      function printName(user) {
+        return user.firstName + " " + user.lastName;
+      }
+
+      /*An oject named user with two properties firstName and lastName*/
+      const user = {
+        firstName : "<Your_First_Name>",
+        lastName : "<Your_Last_Name>"
+      }
+
+      /*An element with some HTML code,
+        with an embedded Javascript expression
+      */
+      const element = (
+        <h1>Hello , {printName(user)}</h1>
+      )
+
+      ReactDOM.render(
+        element,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
