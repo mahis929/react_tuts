@@ -11,7 +11,7 @@
     <div id="root"></div>
     <script type="text/babel">
 
-      /* Function to render an HTML code */
+      /* Function to render an HTML code (not a React Component) */
       function tick(){
         const element = (
           <div>
@@ -31,6 +31,8 @@
 
       /*
         React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+        
+        https://reactjs.org/granular-dom-updates-c158617ed7cc0eac8f58330e49e48224.gif
 
         Even though we create an element describing the whole UI tree on every tick, only the text node whose contents has changed gets updated by React DOM.
       */
