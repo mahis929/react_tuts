@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+
+      function Wtext(props){
+        return <h1>Hello, {props.name}</h1>;
+      }
+
+      /* A user defined component Wtext with some attributes termed as props */
+      const element = (
+        <Wtext name="Your Name" />
+      );
+
+      ReactDOM.render(element, document.getElementById("root"));
+
+      /*
+        A Component name should always start with an uppercase letter, as React treats components starting
+        with lowercase letters as DOM tags.
+
+        Here we perform the following steps,
+          1. We call the ReactDOM.render(), with <Wtext name="Your Name" /> element.
+          2. React calls the Wtext component with {name: "Your Name"} as the props.
+          3. Our Wtext component returns a <h1>Hello, Your Name</h1> element as the result.
+          4. React DOM efficiently updates the DOM to match <h1>Hello, Your Name</h1>.
+      */
+
+    </script>
+  </body>
+</html>
