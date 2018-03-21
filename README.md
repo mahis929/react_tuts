@@ -1,6 +1,7 @@
 ## Reactjs Tutorials
 
-###Contributors
+### Contributors
 
 **Mahesh Tudu**
+
 **Minanshu Singh**
