@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+
+      function Wtext(props){
+        return <h1>Hello, {props.name}</h1>;
+      }
+
+      /* A user defined component Wtext with some attributes termed as props */
+      function App(){
+        return (
+          <div>
+            <Wtext name="Mahesh" />
+            <Wtext name="Mahesh" />
+            <Wtext name="Mahesh" />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+  </body>
+</html>
