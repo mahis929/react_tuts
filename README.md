@@ -2,6 +2,6 @@
 
 ### Contributors
 
-**Mahesh Tudu**
+*Mahesh Tudu*
 
 **Minanshu Singh**
