@@ -1,0 +1,67 @@
+<!-- 
+To show all the 3 Clock components are isolated from each other
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      class Clock extends React.Component {
+        
+        constructor(props){
+          super(props);
+          this.state = {date: new Date()};
+        }
+
+        /* Sets up a timer when the Clock is rendered to the DOM for the first time */
+        componentDidMount() {
+          this.timerID = setInterval(
+            () => this.tick(),
+            1000
+          );
+        }
+
+        /* Clears the timer whenever the DOM produced by the Clock is removed */
+        componentWillUnmount() {
+          clearInterval(this.timerID);
+        }
+
+        tick(){
+          this.setState({
+            date: new Date()
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>Hello, World</h1>
+              <h3>The time is : {this.state.date.toLocaleTimeString()}</h3>
+            </div>
+          );  
+        }
+      }
+
+      function App(props) {
+        return (
+          <div>
+            <Clock />
+            <Clock />
+            <Clock />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById('root'));
+
+    </script>
+  </body>
+</html>
