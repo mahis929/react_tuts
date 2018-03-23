@@ -20,12 +20,21 @@
 
         /* Sets up a timer when the Clock is rendered to the DOM for the first time */
         componentDidMount() {
-
+          this.timerID = setInterval(
+            () => this.tick(),
+            1000
+          );
         }
 
         /* Clears the timer whenever the DOM produced by the Clock is removed */
         componentWillUnmount() {
+          clearInterval(this.timerID);
+        }
 
+        tick(){
+          this.setState({
+            date: new Date()
+          });
         }
 
         render() {
