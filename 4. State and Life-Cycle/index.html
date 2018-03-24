@@ -1,3 +1,8 @@
+<!-- 
+This is the wrong way of creating a stateful object in React whose
+state changes frequently. In index2 we use classes to create components
+and assign local states.
+ -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,7 +24,8 @@
         </div>
         );
       }
-
+      
+      //The tick() function is repeated over an interval of 1000ms.
       function tick(){
         ReactDOM.render(<Clock date={new Date()}/>, document.getElementById('root'));
       }

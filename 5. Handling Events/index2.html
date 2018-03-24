@@ -10,7 +10,8 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function activateLasers() {
+      function activateLasers(e) {
+        e.preventDefault();
         alert("Lasers activated! Pew pew pew!!");
       }
 
