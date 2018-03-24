@@ -1,3 +1,8 @@
+<!-- 
+This example shows data-flow in action which takes place in a top-down
+way, unidirectional. We create a formattedTime component inside the clock 
+component which receives the formatted time at frequent intervals and displays it.
+ -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +16,11 @@
     <div id="root"></div>
     <script type="text/babel">
 
+      function FormattedTime(props) {
+        return (
+          <h3>The time is : {props.date.toLocaleTimeString()}</h3>
+        );
+      }
       class Clock extends React.Component {
         
         constructor(props){
@@ -41,14 +51,14 @@
           return (
             <div>
               <h1>Hello, World</h1>
-              <h3>The time is : {this.state.date.toLocaleTimeString()}</h3>
+              <FormattedTime date={this.state.date} />
             </div>
           );  
         }
       }
 
       ReactDOM.render(<Clock />, document.getElementById('root'));
-
+      
     </script>
   </body>
 </html>
